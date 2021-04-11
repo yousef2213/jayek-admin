@@ -1,81 +1,9 @@
 import React, { useContext } from 'react'
-import LikeImg from '../../images/select.png'; 
-import { IoMdClose } from 'react-icons/io';
-import { BsCheck } from 'react-icons/bs';
-import { useState } from 'react';
-import uuid from "react-uuid";
 import { JayAdminContext } from '../../context/context';
-import { Tabs } from 'react-bootstrap';
 
 export default function Registration() {
 
     const { Invitation, Resturants = [], Approvition, DeletingResturant } = useContext(JayAdminContext)
-
-    let List = [
-        {id: 1, name: "Burgers King", type: `Fast Food`, email: "yousef@gmail.com", mob: "01011404312"},
-        {id: 2, name: "Burgers King", type: "Sandwiches", email: "yousef@gmail.com", mob: "01011404312"},
-        {id: 3, name: "Burgers King", type: "Burgers", email: "yousef@gmail.com", mob: "01011404312" },
-        {id: 4, name: "Burgers King", type: "type num", email: "yousef@gmail.com", mob: "01011404312"},
-        {id: 5, name: "Burgers King", type: "type", email: "yousef@gmail.com", mob: "01011404312"},
-    ]
-
-    const CategoriesList = [
-        {id: uuid(), name:"nameCat"}
-    ]
-    const [Resturant, setResturant] = useState(List);
-
-    const addResturantBranch = () => {
-        let name = document.getElementById("nameres").value;
-        let desc = document.getElementById("descres").value;
-        let cat = document.getElementById("catres").value;
-        let price = document.getElementById("priceres").value;
-        let img = document.getElementById("img-replace-new").src;
-        if(name==="" || desc === "" || cat === "" || price === ""){
-            alert("Please complete the data.")
-        }
-        else {
-            let obj = {
-                id: uuid(),
-                img,
-                name,
-                desc,
-                cat,
-                price,
-            }
-            let newObj = [...Resturant, obj]
-            setResturant(newObj)
-            console.log(newObj);
-            document.getElementById("nameres").value = "";
-            document.getElementById("descres").value = "";
-            document.getElementById("catres").value = "";
-            document.getElementById("priceres").value = "";
-            document.getElementById("img-replace-new").src = LikeImg;
-        }
-    }
-    const handelChange = () => {
-        const imgFile = document.querySelector("#create-Logo-resturant-cat").files[0];
-        const imgResturant = document.getElementById("img-replace-new");
-        const reader = new FileReader();
-        reader.addEventListener("load",function () {
-            imgResturant.src = reader.result;
-        },false);
-        if (imgFile) {
-            reader.readAsDataURL(imgFile);
-        }
-    };
-
-    const DelResurant = (id) => {
-        let filter = Resturant.filter(item => item.id != id);
-        setResturant(filter)
-    }
-
-    const EmptyField = () => {
-        document.getElementById("nameres").value = "";
-        document.getElementById("descres").value = "";
-        document.getElementById("catres").value = "";
-        document.getElementById("priceres").value = "";
-        document.getElementById("img-replace-new").src = LikeImg;
-    }
 
 
     let TabsRegistrtion;

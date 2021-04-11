@@ -4,7 +4,7 @@ import LikeImg from '../images/image.png';
 
 const JayAdminContext = createContext();
 
-const Url = "https://rest-manage.herokuapp.com";
+const Url = "https://api.jayek.info";
 let Token = JSON.parse(localStorage.getItem('TokenJayAdmin'));
 class JayAdminProvider extends Component {
     state = {

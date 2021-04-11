@@ -19,7 +19,7 @@ export default function Forget() {
         redirect: 'follow'
         };
 
-        fetch("{{local}}/api/admin/forget", requestOptions)
+        fetch("https://api.jayek.info/api/admin/forget", requestOptions)
         .then(response => response.json())
         .then(result => alert(result.message))
         .catch(error => console.log('error', error));

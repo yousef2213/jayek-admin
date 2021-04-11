@@ -1,16 +1,11 @@
 import React from 'react'
-import { FiSliders } from "react-icons/fi"
 
 import Offers from '../../components/admin/Offer.js'
 import Orders from '../../components/admin/Orders.js'
 
-import log1 from "../../images/Res.png"
-import log2 from "../../images/offer.png"
-import log3 from "../../images/order.png"
 import LogoSide from "../../images/Logo2.png"
 import LogoutImg from "../../images/Logout.png"
 
-import { IoReaderOutline } from "react-icons/io5"
 import {ReactComponent as OfferLogo}  from "../../images/grey/offers.svg";
 import {ReactComponent as OrdersLogo}  from "../../images/grey/orders.svg";
 import {ReactComponent as RestaurantsLogo}  from "../../images/grey/restaurants.svg";

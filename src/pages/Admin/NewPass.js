@@ -32,7 +32,7 @@ export default function NewPass(props) {
                 redirect: 'follow'
                 };
 
-                fetch("https://rest-manage.herokuapp.com/api/admin/forget/reset", requestOptions)
+                fetch("https://api.jayek.info/api/admin/forget/reset", requestOptions)
                 .then(response => response.json())
                 .then(result => {
                     document.querySelector(".loading").classList.add("hideloader");
